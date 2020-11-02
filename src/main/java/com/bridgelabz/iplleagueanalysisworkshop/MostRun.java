@@ -13,19 +13,19 @@ public class MostRun {
 	@CsvBindByName(column = "NO")
 	private String notOuts;
 	@CsvBindByName(column = "Runs")
-	private long runs;
+	private String runs;
 	@CsvBindByName(column = "HS")
 	private String highestScore;
 	@CsvBindByName(column = "Avg")
-	private Double avg;
+	private String avg;
 	@CsvBindByName(column = "BF")
 	private String ballsFaced;
 	@CsvBindByName(column = "SR")
 	private double strikeRate;
 	@CsvBindByName(column = "100")
-	private int hundreds;
+	private String hundreds;
 	@CsvBindByName(column = "50")
-	private int fifties;
+	private String fifties;
 	@CsvBindByName(column = "4s")
 	private int fours;
 	@CsvBindByName(column = "6s")
@@ -71,11 +71,11 @@ public class MostRun {
 		this.notOuts = notOuts;
 	}
 
-	public long getRuns() {
+	public String getRuns() {
 		return runs;
 	}
 
-	public void setRuns(long runs) {
+	public void setRuns(String runs) {
 		this.runs = runs;
 	}
 
@@ -87,11 +87,11 @@ public class MostRun {
 		this.highestScore = highestScore;
 	}
 
-	public double getAvg() {
-		return this.avg;
+	public String getAvg() {
+		return avg;
 	}
 
-	public void setAvg(Double avg) {
+	public void setAvg(String avg) {
 		this.avg = avg;
 	}
 
@@ -111,19 +111,19 @@ public class MostRun {
 		this.strikeRate = strikeRate;
 	}
 
-	public int getHundreds() {
+	public String getHundreds() {
 		return hundreds;
 	}
 
-	public void setHundreds(int hundreds) {
+	public void setHundreds(String hundreds) {
 		this.hundreds = hundreds;
 	}
 
-	public int getFifties() {
+	public String getFifties() {
 		return fifties;
 	}
 
-	public void setFifties(int fifties) {
+	public void setFifties(String fifties) {
 		this.fifties = fifties;
 	}
 
@@ -146,9 +146,7 @@ public class MostRun {
 	public int getBoundaries() {
 		return this.fours+this.sixes;
 	}
-	public int getCenturies() {
-		return this.hundreds+this.fifties;
-	}
+
 	@Override
 	public String toString() {
 		return "Batting [pos=" + pos + ", player=" + player + ", matches=" + matches + ", innings=" + innings
