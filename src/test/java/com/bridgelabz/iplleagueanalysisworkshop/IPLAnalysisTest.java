@@ -60,4 +60,10 @@ public class IPLAnalysisTest {
 		Assert.assertEquals(333.33, highestAvgData[0].getStrikeRate(), 0.0);
 		Assert.assertEquals("Ishant Sharma", highestAvgData[0].getPlayer());
 	}
+	@Test
+	public void givenMostRunCsvFileWhenSortedShouldReturnHighestAverageWithBestSR() throws IplAnalyserException {
+		String sortedData = iplAnalyser.sortRunData(MOSTRUNS_FILE_PATH, MostRunSortType.AVERAGE_AND_SR);
+		MostRun[] highestAvgData = new Gson().fromJson(sortedData, MostRun[].class);
+		Assert.assertEquals(83.2, highestAvgData[0].getAvg(),0.0);
+	}
 }
